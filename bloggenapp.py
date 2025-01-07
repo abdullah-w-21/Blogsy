@@ -1,5 +1,8 @@
 import streamlit as st
-from crewai import Agent, Task, Crew
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+from crewai import Agent, Task, Crew, Process
 import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
