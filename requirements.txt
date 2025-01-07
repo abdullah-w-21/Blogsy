@@ -13,3 +13,6 @@ google-api-python-client~=2.156.0
 protobuf~=5.29.2
 google-auth-oauthlib~=1.2.1
 langchain-groq
+pipdeptree
+pysqlite3-binary
+chromadb
