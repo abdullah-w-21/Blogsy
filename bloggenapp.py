@@ -22,16 +22,17 @@ import pandas as pd
 load_dotenv()
 
 # Initialize Streamlit secrets for API keys
-if not st.secrets.get("GROQ_API_KEY"):
-    st.error("Please set GROQ_API_KEY in your secrets.toml file!")
+if not st.secrets.get("GEMINI_API_KEY"):
+    st.error("Please set GEMINI_API_KEY in your secrets.toml file!")
     st.stop()
 
 # Set API key from secrets
-os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
 
-# Initialize LLM
-llm = ChatGroq(
-    model_name="groq/llama-3.3-70b-versatile"
+# Initialize LLM with Gemini
+llm = LLM(
+    model='gemini/gemini-1.5-flash',
+    api_key=st.secrets["GEMINI_API_KEY"]
 )
 
 
